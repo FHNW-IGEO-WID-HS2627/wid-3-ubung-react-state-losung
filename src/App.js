@@ -1,10 +1,11 @@
 import "./app.css";
 import { useState } from "react";
-import { Aufgabe1, Aufgabe2, Aufgabe3 } from "./static/ExText";
+import { Aufgabe1, Aufgabe2, Aufgabe3, Aufgabe4 } from "./static/ExText";
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0); // useState Hook für Aufgabe 1
   const [checkboxState, setCheckboxState] = useState(true);
+  const [text, setText] = useState("");
   const [alignState, setAlignState] = useState("left");
   const [fontSizeState, setFontSizeState] = useState(10);
 
@@ -18,6 +19,10 @@ function App() {
           <button className="Button" onClick={() => setCounter(counter + 1)}>
             + 1
           </button>
+          <button className="Button" onClick={() => setCounter(counter + 5)}>
+            + 5
+          </button>
+          {/* Nachfolgende Zeile: Du setzt den Zähler auf 0. Der aktuelle Wert des Zählers wird daher nicht benötigt. */}
           <button className="Button" onClick={() => setCounter(0)}>
             Reset
           </button>
@@ -44,6 +49,28 @@ function App() {
       {/* --------------------------------------------------------------------------------------------- */}
       <div className="ExerciseContainer">
         <Aufgabe3 />
+        <div className="WrapperHorizontal">
+          {/* Im Input-Element fügst du ein weiteres Attribut mit dem Schlüssel `value`hinzu und weist die State-Variable in {}-Klammern als Wert zu. */}
+          <input
+            id="textfeld"
+            type="text"
+            value={text}
+            onChange={
+              (e) =>
+                setText(
+                  e.target.value,
+                ) /* Hier brauchst du wieder eine setState Funktion. Sie soll e.target.value als Argument bekommen und dies in State schreiben. */
+            }
+          />
+          <div>
+            <p>{text}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* --------------------------------------------------------------------------------------------- */}
+      <div className="ExerciseContainer">
+        <Aufgabe4 />
         <div className="WrapperHorizontal">
           <select
             onChange={(event) => {
