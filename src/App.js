@@ -37,7 +37,7 @@ function App() {
             id="Checkbox"
             type="checkbox"
             checked={checkboxState} // "controlled component"
-            onClick={() => setCheckboxState(!checkboxState)}
+            onChange={() => setCheckboxState(!checkboxState)}
           ></input>
           <div>
             <p style={{ color: checkboxState ? "#33ff33" : "red" }}>
