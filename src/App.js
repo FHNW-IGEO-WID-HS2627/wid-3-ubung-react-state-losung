@@ -73,6 +73,7 @@ function App() {
         <Aufgabe4 />
         <div className="WrapperHorizontal">
           <select
+            value={alignState}
             onChange={(event) => {
               setAlignState(event.target.value);
             }}
@@ -82,6 +83,7 @@ function App() {
             <option value="right">Rechts</option>
           </select>
           <select
+            value={fontSizeState}
             onChange={(event) => {
               // Wert:
               console.log(event.target.value);
