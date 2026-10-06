@@ -83,12 +83,19 @@ function App() {
           </select>
           <select
             onChange={(event) => {
+              // Wert:
               console.log(event.target.value);
+              // Datentyp von event.target.value
+              console.log(typeof event.target.value);
+              // Aus String wird mit parseInt() ein Integer:
+              console.log(typeof parseInt(event.target.value));
+
+              // setState
               setFontSizeState(parseInt(event.target.value));
             }}
           >
             {/* Auch Zahlen werden im Event Objekt 
-            als Text behandelt und müssen mit parseInt() zu Nummern gecastet werden: */}
+            als Text behandelt und müssen mit parseInt() zu Zahlen gecastet werden: */}
             <option value="10">10</option>
             <option value="12">12</option>
             <option value="14">14</option>
